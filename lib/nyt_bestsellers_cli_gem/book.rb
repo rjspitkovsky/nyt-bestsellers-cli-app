@@ -21,5 +21,9 @@ class Book
       @@all
     end
 
+    def self.find_by_title(title)
+      self.all.detect {|book| book.title == title}
+    end 
+
 
 end
