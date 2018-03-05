@@ -1,3 +1,6 @@
 class Category
 
-end 
+  attr_accessor :name, :books 
+  @@all = []
+
+end
