@@ -28,25 +28,26 @@ class CLI
 end
 
   def book_details
-    input = ""
     puts "Please type in the title of the book to see its summary."
     puts "Type back to review other categories."
-    while input != "back"
       input = gets.strip.upcase
       if Book.find_by_title(input) != nil
         if Book.find_by_title(input).summary != ""
           puts Book.find_by_title(input).summary
         else
           puts "Sorry, this book does not have a summary provided."
-        break
       end
       end
-      greeting
-      pick_category
-      book_details
-    end
   end
 
+  
+
+  def goodbye!
+    input = gets.strip
+    if input == "exit"
+    puts "Thank you for stopping by!"
+  end
+  end
 
 
 
