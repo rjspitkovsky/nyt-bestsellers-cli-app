@@ -1,21 +1,20 @@
 class Book
 
-  attr_accessor :title, :author, :summary, :purchase_url, :category
+  attr_accessor :title, :author, :summary, :category
 
   @@all = []
 
-    def initialize(title, author, summary, purchase_url, category)
+    def initialize(title, author, summary, category)
       @title = title
       @author = author
       @summary = summary
-      @purchase_url = purchase_url
       @category = category
       @@all << self
       add_book_to_category(category)
     end
 
     def add_book_to_category(category)
-      Category.all.detect {|type| type.name == category}.books << self 
+      Category.all.detect {|type| type.name == category}.books << self
     end
 
     def self.all
