@@ -15,12 +15,12 @@ class Book
     end
 
     def add_book_to_category(category)
-      Category.all.detect {|type| type.name == self.category} << self
+      Category.all.detect {|type| type.name == category}.books << self 
     end
 
     def self.all
       @@all
-    end 
+    end
 
 
 end
