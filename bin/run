@@ -3,5 +3,3 @@
 require_relative '../config/environment'
 
 CLI.new.call
-
-Scraper.new("https://www.nytimes.com/books/best-sellers/")

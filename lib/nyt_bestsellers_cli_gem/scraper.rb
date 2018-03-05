@@ -12,9 +12,9 @@ class Scraper
 
   def scrape_category_name
     @doc.css("section.subcategory").each do |section|
-      name = section.css("a.subcategory-heading-link").text
+      name = section.css("a.subcategory-heading-link").text.strip
       Category.new(name)
-    end 
+    end
   end
 
 
