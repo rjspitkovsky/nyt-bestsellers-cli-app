@@ -1,4 +1,4 @@
-require "nyt_bestsellers_cli_gem/version"
+require_relative '../config/environment'
 #change require to config/environment
 module NytBestsellersCliGem
 end
