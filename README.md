@@ -1,6 +1,6 @@
 # NytBestsellersCliGem
 
-This gem will allow you to receive more information and purchase books directly from the New York Times Bestsellers List! Reading is important. 
+This gem will allow you to receive more information and purchase books directly from the New York Times Bestsellers List! Reading is important.
 
 ## Installation
 
@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the prompts:
+
+  $ nyt_bestsellers_cli_gem
 
 ## Development
 
