@@ -24,7 +24,7 @@ class CLI
       pick_category
       book_details
     end
-end
+  end
 
   def book_details
     puts "Please type in the title of the book to see its summary."
