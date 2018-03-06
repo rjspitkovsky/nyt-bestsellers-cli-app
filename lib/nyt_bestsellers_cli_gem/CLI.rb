@@ -14,7 +14,7 @@ class CLI
     puts "Please choose the number of the category you wish to inspect:"
     input = gets.strip
     if input == "exit"
-      goodbye!
+      puts "Thank you for stopping by!"
       exit
     elsif input.to_i > 0 && input.to_i < 6
        Category.all[input.to_i - 1].books.each do |book|
@@ -23,7 +23,7 @@ class CLI
     else
       pick_category
       book_details
-  end
+    end
 end
 
   def book_details
@@ -32,10 +32,12 @@ end
       input = gets.strip.upcase
 
       if Book.find_by_title(input) != nil
+
         if Book.find_by_title(input).summary != ""
           puts Book.find_by_title(input).summary
           puts "Would you like to buy this book? (y/n)"
             input = gets.strip.downcase
+
               if input == "y"
                 system("open https://www.nytimes.com/books/best-sellers/")
               else
@@ -43,20 +45,18 @@ end
                 pick_category
                 book_details
               end
+
         else
           puts "Sorry, this book does not have a summary provided."
           puts "Type exit at anytime to exit."
           pick_category
           book_details
         end
+
       else
       puts "Type exit at anytime to exit."
       pick_category
       book_details
       end
-  end
-
-  def goodbye!
-    puts "Thank you for stopping by!"
-  end
+    end
 end
