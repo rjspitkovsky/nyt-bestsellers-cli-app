@@ -4,7 +4,7 @@ class Book
 
   @@all = []
 
-    def initialize(title, author, summary, category)
+    def initialize(title = nil, author = nil, summary = nil, category = nil)
       @title = title
       @author = author
       @summary = summary
@@ -23,7 +23,7 @@ class Book
 
     def self.find_by_title(title)
       self.all.detect {|book| book.title == title}
-    end 
+    end
 
 
 end
