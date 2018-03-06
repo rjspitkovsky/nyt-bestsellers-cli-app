@@ -1,4 +1,4 @@
-# NytBestsellersCliGem
+# NYT Bestsellers Cli Gem
 
 This gem will allow you to receive more information and purchase books directly from the New York Times Bestsellers List! Reading is important.
 
