@@ -5,7 +5,6 @@ class CLI
     greeting
     pick_category
     book_details
-    goodbye!
   end
 
   def greeting
@@ -22,14 +21,16 @@ class CLI
     end
     puts "Please choose the number of the category you wish to inspect:"
     input = gets.strip
-    if input.to_i > 0 && input.to_i < 6
+    if input == "exit"
+      goodbye!
+      exit
+    elsif input.to_i > 0 && input.to_i < 6
        Category.all[input.to_i - 1].books.each.with_index(1) do |book, i|
          puts "#{i}. #{book.title} - #{book.author}"
        end
     else
       pick_category
       book_details
-      goodbye!
   end
 end
 
@@ -38,6 +39,7 @@ end
     puts "Type back to review other categories."
       #while input != "back" || input != "exit"
       input = gets.strip.upcase
+
       if Book.find_by_title(input) != nil
         if Book.find_by_title(input).summary != ""
           puts Book.find_by_title(input).summary
@@ -46,10 +48,9 @@ end
               if input == "y"
                 system("open https://www.nytimes.com/books/best-sellers/")
               else
-                greeting
+                puts "Type exit at anytime to exit."
                 pick_category
                 book_details
-                goodbye!
               end
 
 
@@ -58,13 +59,19 @@ end
 
         else
           puts "Sorry, this book does not have a summary provided."
+          puts "Type exit at anytime to exit."
+          pick_category
+          book_details
           #pick_another_book
           #break
 
         end
 
       else
+      puts "Type exit at anytime to exit."
       pick_category
+      book_details
+
       end
 
       #pick_category
