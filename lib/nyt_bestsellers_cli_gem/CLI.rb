@@ -3,7 +3,6 @@ class CLI
   def call
     Scraper.new.scrape
     pick_category
-    book_details
   end
 
   def pick_category
@@ -25,9 +24,9 @@ class CLI
          spaces
          puts "#{book.title} - #{book.author}".upcase
        end
+       book_details
     else
-      pick_category
-      book_details
+      return_to_list
     end
   end
 
@@ -47,7 +46,7 @@ class CLI
           puts "Sorry, this book does not have a summary provided.".upcase
           buy_book
         end
-        
+
       else
         return_to_list
       end
@@ -62,17 +61,15 @@ class CLI
     def return_to_list
       puts "Type exit at anytime to exit.".upcase
       pick_category
-      book_details
     end
 
     def buy_book
       puts "Would you like to buy this book? (y/n)".upcase
         input = gets.strip.downcase
-
-          if input == "y"
-            system("open https://www.nytimes.com/books/best-sellers/")
-          else
-            return_to_list
-          end
-      end
+        if input == "y"
+          system("open https://www.nytimes.com/books/best-sellers/")
+        else
+          return_to_list
+        end
+    end
 end
