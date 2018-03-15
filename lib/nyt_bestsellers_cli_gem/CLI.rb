@@ -68,6 +68,7 @@ class CLI
         input = gets.strip.downcase
         if input == "y"
           system("open https://www.nytimes.com/books/best-sellers/")
+          return_to_list
         else
           return_to_list
         end
