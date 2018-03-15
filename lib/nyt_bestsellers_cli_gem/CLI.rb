@@ -59,6 +59,7 @@ class CLI
     end
 
     def return_to_pick_category
+      spaces
       puts "Type exit at anytime to exit.".upcase
       pick_category
     end
