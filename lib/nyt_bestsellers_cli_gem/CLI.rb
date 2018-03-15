@@ -26,7 +26,7 @@ class CLI
        end
        book_details
     else
-      return_to_list
+      return_to_pick_category
     end
   end
 
@@ -48,7 +48,7 @@ class CLI
         end
 
       else
-        return_to_list
+        return_to_pick_category
       end
     end
 
@@ -58,7 +58,7 @@ class CLI
       puts ""
     end
 
-    def return_to_list
+    def return_to_pick_category
       puts "Type exit at anytime to exit.".upcase
       pick_category
     end
@@ -68,9 +68,9 @@ class CLI
         input = gets.strip.downcase
         if input == "y"
           system("open https://www.nytimes.com/books/best-sellers/")
-          return_to_list
+          return_to_pick_category
         else
-          return_to_list
+          return_to_pick_category
         end
     end
 end
