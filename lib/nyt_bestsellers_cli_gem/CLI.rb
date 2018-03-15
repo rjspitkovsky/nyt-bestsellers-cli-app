@@ -9,8 +9,8 @@ class CLI
     spaces
     puts "WELCOME TO THE NEW YORK TIMES BESTSELLER LIST!"
     spaces
-    Category.all.each.with_index(1) do |section_title, i|
-      puts "#{i}. #{section_title.name}".upcase
+    Category.all.each.with_index(1) do |category_instance, i|
+      puts "#{i}. #{category_instance.name}".upcase
     end
     spaces
     puts "Please choose the number of the category you wish to inspect:".upcase
