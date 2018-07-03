@@ -11,6 +11,8 @@ class Scraper
   end
 
   def scrape
+    # Create an instance of a Category first so that a book can be added to the category when initialized
+    # Then scrape for the remainder of the book details 
     scrape_category_name
     scrape_book_details
   end

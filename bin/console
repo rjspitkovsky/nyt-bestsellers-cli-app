@@ -2,6 +2,7 @@
 
 require_relative '../config/environment'
 
+# adding a method that reloads the program after making changes to the code from within the console
 
 def reload!
   load_all './lib'

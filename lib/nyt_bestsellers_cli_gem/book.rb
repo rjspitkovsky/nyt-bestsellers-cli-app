@@ -14,6 +14,7 @@ class Book
     end
 
     def add_book_to_category(category)
+      # adds the book that was just created to the Category instance that was passed to the Book on instantiation. 
       Category.all.detect {|type| type.name == category}.books << self
     end
 
